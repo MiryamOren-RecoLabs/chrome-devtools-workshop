@@ -1,0 +1,14 @@
+.navbar{
+    padding: 10px 20px;
+    display: flex;
+    justify-content:space-between;
+    line-height: 50px;
+    width: 100%;
+}
+.currentPage {
+    font-size: 40px;
+}
+.links a{
+    margin: 10px;
+    font-size: 30px;
+}

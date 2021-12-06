@@ -1,0 +1,28 @@
+.levelScreen {
+    height: 100vh;
+    background-image: linear-gradient(to bottom right,#d43078,#ffef03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+}
+.instructions, .password {
+    font-size: 40px;
+    max-width: 800px;
+    padding: 50px;
+    display: block;
+}
+.password {
+    width: fit-content;
+}
+.gif {
+    height: 30%;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
