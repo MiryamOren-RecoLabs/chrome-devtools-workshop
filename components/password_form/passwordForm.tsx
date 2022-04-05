@@ -1,13 +1,18 @@
 import { useEffect, useRef, useState, MouseEvent, MouseEventHandler  } from "react";
 import { getCookie, setCookie } from '../../utils/handleCookies'
+import levelsConfig from '../../levelsConfig'
 import styles from './passwordForm.module.css'
 
 interface PasswordFormProps {
     level: number;
     setDisplayLockScreen?: any;
+    // If shouldMoveToNextLevel is true, 
+    // inputting the correct password will advance the player
+    // to the next level. Otherwise (false or null), don't.
+    shouldMoveToNextLevel?: boolean;
 }
 
-const PasswordForm = ({ level, setDisplayLockScreen }: PasswordFormProps): JSX.Element => {
+const PasswordForm = ({ level, setDisplayLockScreen, shouldMoveToNextLevel }: PasswordFormProps): JSX.Element => {
     const [inputValue, setInputValue] = useState<string>('');
     const [wrongPassword, setWrongPassword] = useState<boolean>(false)
     const inputRef = useRef<HTMLInputElement>(null);
@@ -28,6 +33,13 @@ const PasswordForm = ({ level, setDisplayLockScreen }: PasswordFormProps): JSX.E
             const passwords = stringifiedPasswords? JSON.parse(stringifiedPasswords): {};
             setCookie('levelsPasswords', JSON.stringify({ ...passwords, [level]: inputValue }));
             if (setDisplayLockScreen) setDisplayLockScreen(false)
+            setWrongPassword(false) // The password isn't false anymore
+            if (shouldMoveToNextLevel) {
+                const nextLevel = level + 1;
+                const nextLevelConfig = levelsConfig[nextLevel - 1]; // Off by one, arrays are zero-based
+                const nextLevelURL = `/levels/${nextLevelConfig.tab.toLowerCase()}/level${nextLevelConfig.levelIndex}`;
+                window.location.href = nextLevelURL;
+            }
         } else {
             setWrongPassword(true)
         }

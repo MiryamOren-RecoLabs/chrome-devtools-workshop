@@ -13,7 +13,7 @@ const CurrentLevel = (): JSX.Element => {
             </p>
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/DqdCitr-57MAAAAM/cheshire-cat-alice-in-wonderland.gif"/>
             <div className={generalLevelsStyles.buttons}>
-                <NextLevel />
+                <NextLevel currentLevel={1} />
                 <Hint />
             </div>
             <p className="password">
