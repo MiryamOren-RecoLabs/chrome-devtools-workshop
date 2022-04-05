@@ -1,10 +1,24 @@
 import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from '../../../components/hint/hint'
-import NextLevel from '../../../components/next-level/nextLevel'
+import NextLevel from '../../../components/next_level_popup/nextLevel'
+import LockScreen from '../../../components/password_form/lockScreen'
+import { useEffect, useState } from 'react'
+import { getCookie } from '../../../utils/handleCookies' 
 
 const Level1 = (): JSX.Element => {
-    return (
+    const passwordMatch = (level: number): boolean => {
+        const stringifiedPasswords = getCookie('levelsPasswords');
+        const passwords = stringifiedPasswords? JSON.parse(stringifiedPasswords): {};
+        console.log(passwords[level], JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[level])
+        return (passwords[level] && passwords[level] === JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[level]);
+    };
+    const [lockScreen, setLockScreen] = useState(true);
+    useEffect(() => {
+        setLockScreen(!passwordMatch(1));
+    }, [passwordMatch(1)]);
+
+    return (!lockScreen) ? (
         <div className={generalLevelsStyles.levelScreen}>
             <Navbar currentPage="Level 1" />
             <p className={generalLevelsStyles.instructions}>
@@ -18,6 +32,7 @@ const Level1 = (): JSX.Element => {
             <p className="password">
                 <span style={{ visibility: 'hidden' }} className={generalLevelsStyles.password}>The password is: Iafortina</span>
             </p>
-        </div>)
+        </div>) : <LockScreen level={1}/>;
 }
 export default Level1
+
