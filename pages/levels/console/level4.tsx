@@ -3,6 +3,7 @@ import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
+import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CurrentLevel = () : JSX.Element => {
     const Eagosse = () => console.error('Error 103');
@@ -18,6 +19,7 @@ const CurrentLevel = () : JSX.Element => {
                 <p>{`What's the name of function that logging the error?`}</p>
             </div>
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/OxvVRFnPZO8AAAAC/error-the-simpsons.gif"/>
+            <NextLevel currentLevel={4} />
             <Hint />
         </div>
     );
