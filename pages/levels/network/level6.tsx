@@ -4,6 +4,7 @@ import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
 import axios from 'axios'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
+import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const randomIntFromInterval= (min: number, max: number) : number => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -58,6 +59,7 @@ const CurrentLevel = (): JSX.Element => {
                 The password appears in the picture from the website postimg
             </div>
             <img className={generalLevelsStyles.gif} src="https://i.pinimg.com/originals/87/76/b9/8776b926c6e1ad1cd29eaa8a6d7dc145.gif"/>
+            <NextLevel currentLevel={6} />
             <Hint />
             <SixRandomImagesAndPassword />
             {fetchImages && <OneRandomImage />}

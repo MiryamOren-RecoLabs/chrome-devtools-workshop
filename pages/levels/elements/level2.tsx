@@ -2,6 +2,7 @@ import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from '../../../components/hint/hint'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
+import NextLevel from '../../../components/next_level_popup/nextLevel'
 
 
 const CurrentLevel = (): JSX.Element => {
@@ -12,6 +13,7 @@ const CurrentLevel = (): JSX.Element => {
                 {`Change the class of this div to "showPassword"`}
             </div>
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/23KqA5qlBnUAAAAC/class-laugh.gif"/>
+            <NextLevel currentLevel={2} /> 
             <Hint />
         </div>
     );

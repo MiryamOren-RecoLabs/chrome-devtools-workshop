@@ -36,6 +36,10 @@ const PasswordForm = ({ level, setDisplayLockScreen, shouldMoveToNextLevel }: Pa
             setWrongPassword(false) // The password isn't false anymore
             if (shouldMoveToNextLevel) {
                 const nextLevel = level + 1;
+                console.debug(`Moving to level ${nextLevel} out of ${levelsConfig.length}`);
+                if (nextLevel > levelsConfig.length) {
+                    window.location.href = '/win';
+                }
                 const nextLevelConfig = levelsConfig[nextLevel - 1]; // Off by one, arrays are zero-based
                 const nextLevelURL = `/levels/${nextLevelConfig.tab.toLowerCase()}/level${nextLevelConfig.levelIndex}`;
                 window.location.href = nextLevelURL;

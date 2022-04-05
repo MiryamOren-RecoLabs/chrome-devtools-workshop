@@ -4,6 +4,7 @@ import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
 import axios from 'axios'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
+import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CurrentLevel = () : JSX.Element => {
 
@@ -25,6 +26,7 @@ const CurrentLevel = () : JSX.Element => {
                 Check the network tab
             </div>
             <img className={generalLevelsStyles.gif} src="https://media1.giphy.com/media/l2JhJmZxibUVOMAPm/giphy.gif"/>
+            <NextLevel currentLevel={5} />
             <Hint />
         </div>
     );
