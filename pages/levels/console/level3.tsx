@@ -2,8 +2,9 @@ import { useEffect } from "react"
 import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from '../../../components/hint/hint'
+import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 
-const Level3 = () => {
+const CurrentLevel = () => {
     useEffect(() => {
         console.log('The password is: "BlueDogbane"')
     }, []);
@@ -17,6 +18,10 @@ const Level3 = () => {
             <Hint />
         </div>
     );
+}
+
+const Level3 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={3}/>
 }
 
 export default Level3

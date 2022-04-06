@@ -2,8 +2,9 @@ import { useEffect } from "react"
 import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
+import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 
-const Level4 = () : JSX.Element => {
+const CurrentLevel = () : JSX.Element => {
     const Eagosse = () => console.error('Error 103');
 
     useEffect(() => {
@@ -20,6 +21,10 @@ const Level4 = () : JSX.Element => {
             <Hint />
         </div>
     );
+}
+
+const Level4 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={4}/>
 }
 
 export default Level4;

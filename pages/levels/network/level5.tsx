@@ -3,8 +3,9 @@ import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
 import axios from 'axios'
+import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 
-const Level5 = () : JSX.Element => {
+const CurrentLevel = () : JSX.Element => {
 
     useEffect(() => {
         const getPassword = async () => {
@@ -27,6 +28,10 @@ const Level5 = () : JSX.Element => {
             <Hint />
         </div>
     );
+}
+
+const Level5 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={5}/>
 }
 
 export default Level5;

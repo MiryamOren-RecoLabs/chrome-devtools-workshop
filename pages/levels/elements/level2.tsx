@@ -1,8 +1,10 @@
 import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from '../../../components/hint/hint'
+import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 
-const Level2 = (): JSX.Element => {
+
+const CurrentLevel = (): JSX.Element => {
     return (
         <div className={generalLevelsStyles.levelScreen}>
             <Navbar currentPage="Level 2" />
@@ -13,6 +15,10 @@ const Level2 = (): JSX.Element => {
             <Hint />
         </div>
     );
+}
+
+const Level2 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={2}/>
 }
 
 export default Level2;

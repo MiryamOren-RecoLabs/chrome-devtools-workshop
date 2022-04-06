@@ -3,6 +3,7 @@ import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
 import axios from 'axios'
+import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 
 const randomIntFromInterval= (min: number, max: number) : number => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -26,7 +27,7 @@ const SixRandomImagesAndPassword = (): JSX.Element => (
     </div>
 );
 
-const Level6 = (): JSX.Element => {
+const CurrentLevel = (): JSX.Element => {
     const [fetchImages, setFetchImages] = useState(false);
     const getDistractions = async (resourcesNumber: number) => {
         // fetching random resources
@@ -62,6 +63,10 @@ const Level6 = (): JSX.Element => {
             {fetchImages && <OneRandomImage />}
         </div>
     );
+}
+
+const Level6 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={6}/>
 }
 
 export default Level6;

@@ -1,13 +1,17 @@
 import PasswordForm from './passwordForm';
+import styles from './lockScreen.module.css'
 
 interface LockScreenProps {
     level: number;
+    setDisplayLockScreen: any;
 }
 
-const LockScreen = ({ level }: LockScreenProps): JSX.Element => {
+const LockScreen = ({ level, setDisplayLockScreen }: LockScreenProps): JSX.Element => {
     return (
-    <div>
-        <PasswordForm level={level}/>
+    <div className={styles.lockScreen}>
+        <div className={styles.lockScreenOverlay}>
+            <PasswordForm level={level} setDisplayLockScreen={setDisplayLockScreen} />
+        </div>
     </div>);
 }
 
