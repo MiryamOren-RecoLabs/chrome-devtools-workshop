@@ -1,11 +1,10 @@
 import Success from '../../images/success-icon.png'
 import Image from 'next/dist/client/image'
 import styles from './nextlevel.module.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // @ts-ignore
 import Modal from 'react-modal';
 import PasswordForm from '../password_form/passwordForm';
-
 const customLoader = ({ src }: { src: string}) => {
     return src
 }
@@ -16,6 +15,10 @@ interface NextLevelProps {
 
 const NextLevel = ({currentLevel}: NextLevelProps) => {
     const [showNextLevelPrompt, setShowNextLevelPrompt] = useState(false);
+    useEffect(() => {
+        Modal.setAppElement('body');
+    }, []);
+
     return (
         <div className={styles.nextLevel}>
             <button className={styles.nextLevelButton} onClick={() => setShowNextLevelPrompt(true)}>
@@ -25,9 +28,8 @@ const NextLevel = ({currentLevel}: NextLevelProps) => {
                 <span>Cracked it!</span>
             </button>
             <Modal className={styles.nextLevelModal} isOpen={showNextLevelPrompt}>
-                <button onClick={() => setShowNextLevelPrompt(false)}>X</button>
-                <h1>{`What's this level's password?`}</h1>
-                <PasswordForm level={currentLevel} shouldMoveToNextLevel={true}/>
+                <button onClick={() => setShowNextLevelPrompt(false)} style={{fontFamily: "'Fredoka One', cursive", fontSize: "25px"}}>x</button>
+                <PasswordForm level={currentLevel} description="Enter the password you've found 🗝️" shouldMoveToNextLevel={true}/>
             </Modal>
         </div>
     )

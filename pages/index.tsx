@@ -6,7 +6,6 @@ const Home = () : JSX.Element => {
   return (
     <div className={styles.home}>
       <Navbar currentPage="Home" />
-      <PasswordForm level={0}/>
     </div>
   )
 }

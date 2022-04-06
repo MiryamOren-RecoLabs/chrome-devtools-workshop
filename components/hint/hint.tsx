@@ -5,7 +5,7 @@ import BulbIcon from '../../images/light-bulb-icon.png'
 import Modal from 'react-modal';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const customLoader = ({ src }: { src: string}) => {
     return src
@@ -21,6 +21,10 @@ interface HintProps {
 }
 const Hint = ({ hints=defaultHints }: HintProps): JSX.Element => {
     const [showHint, setShowHint] = useState(false);
+    useEffect(() => {
+        Modal.setAppElement('body');
+    }, []);
+
     return (
         <div className={styles.hint}>
             <button className={styles.hintButton} onClick={() => setShowHint(true)}>

@@ -5,6 +5,7 @@ import styles from './passwordForm.module.css'
 
 interface PasswordFormProps {
     level: number;
+    description: string;
     setDisplayLockScreen?: any;
     // If shouldMoveToNextLevel is true, 
     // inputting the correct password will advance the player
@@ -12,7 +13,7 @@ interface PasswordFormProps {
     shouldMoveToNextLevel?: boolean;
 }
 
-const PasswordForm = ({ level, setDisplayLockScreen, shouldMoveToNextLevel }: PasswordFormProps): JSX.Element => {
+const PasswordForm = ({ level, description, setDisplayLockScreen, shouldMoveToNextLevel }: PasswordFormProps): JSX.Element => {
     const [inputValue, setInputValue] = useState<string>('');
     const [wrongPassword, setWrongPassword] = useState<boolean>(false)
     const inputRef = useRef<HTMLInputElement>(null);
@@ -51,13 +52,14 @@ const PasswordForm = ({ level, setDisplayLockScreen, shouldMoveToNextLevel }: Pa
 
     return (
         <form className={styles.passwordForm} onSubmit={onSubmit}>
-                <label>Enter the password of level {level}:</label>
+                <label>{description}</label>
                 <div className={styles.passwordFormInputWrapper}>
                     <input 
                         value={inputValue}
                         onChange={onChange}
                         ref={inputRef}
                         onBlur={(e) => e.target.focus()}
+                        size={15}
                     />
                     {!inputValue.length && <span></span>}
                 </div>

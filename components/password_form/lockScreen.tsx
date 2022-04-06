@@ -10,7 +10,7 @@ const LockScreen = ({ level, setDisplayLockScreen }: LockScreenProps): JSX.Eleme
     return (
     <div className={styles.lockScreen}>
         <div className={styles.lockScreenOverlay}>
-            <PasswordForm level={level} setDisplayLockScreen={setDisplayLockScreen} />
+            <PasswordForm level={level} description={`Enter the password for level ${level}`} setDisplayLockScreen={setDisplayLockScreen} />
         </div>
     </div>);
 }
