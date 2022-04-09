@@ -23,13 +23,13 @@ const NextLevel = ({currentLevel}: NextLevelProps) => {
         <div className={styles.nextLevel}>
             <button className={styles.nextLevelButton} onClick={() => setShowNextLevelPrompt(true)}>
                 <span className={styles.successIcon}>
-                    <Image src={Success} height={23} width={23} loader={customLoader}/>
+                    <Image src={Success} height={23} width={23} loader={customLoader} unoptimized/>
                 </span>
                 <span>Cracked it!</span>
             </button>
             <Modal className={styles.nextLevelModal} isOpen={showNextLevelPrompt}>
                 <button onClick={() => setShowNextLevelPrompt(false)} style={{fontFamily: "'Fredoka One', cursive", fontSize: "25px"}}>x</button>
-                <PasswordForm level={currentLevel} description="Enter the password you've found 🗝️" shouldMoveToNextLevel={true}/>
+                <PasswordForm level={currentLevel + 1} description="Enter the password you've found 🗝️" shouldMoveToNextLevel={true}/>
             </Modal>
         </div>
     )

@@ -1,0 +1,25 @@
+.level0 {
+    height: fit-content;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.level0 h1 {
+    font-size: 40px;
+    max-width: 800px;
+    padding: 50px;
+    display: block;
+    font-weight: 100;
+}
+
+.level0 p {
+    font-size: 20px;
+    padding: 20px 50px;
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+.level0 img {
+    width: 400px;
+}

@@ -28,7 +28,7 @@ const Hint = ({ hints=defaultHints }: HintProps): JSX.Element => {
     return (
         <div className={styles.hint}>
             <button className={styles.hintButton} onClick={() => setShowHint(true)}>
-                <Image src={BulbIcon} height={25} width={25} loader={customLoader}/>
+                <Image src={BulbIcon} height={25} width={25} loader={customLoader} unoptimized/>
                 <span>Hint?</span>
             </button>
             <Modal className={styles.hintModal} isOpen={showHint}>

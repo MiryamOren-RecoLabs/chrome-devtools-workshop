@@ -29,8 +29,10 @@ a {
   margin-bottom: 120px;
   display: block;
 }
+
 .showPassword::after {
-  content: 'The password is: "CrimsonAconite"';
+  /* Level 3's password */
+  content: 'The password is: bemereAdlana';
   position: absolute;
   display: block;
   bottom: -100px;

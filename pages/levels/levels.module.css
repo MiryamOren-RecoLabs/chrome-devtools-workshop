@@ -7,21 +7,31 @@
     flex-wrap: wrap;
     margin: auto;
     width: fit-content;
-    max-width: 1000px;
+    max-width: 1100px;
     padding: 50px;
 }
 .levelBlock {
     height: 160px;
     width: 160px;
-    background: #ffffff5e;
+    background: #00000085;
     margin: 20px;
     padding: 10px;
-    box-shadow: 0 1px 7px 0 rgb(255 255 255 / 98%);
-    border-radius: 5px;
+    box-shadow: 2px 2px 15px 0 #b12d3b;
+    border-radius: 10px;
     cursor: pointer;
+    position: relative;
 }
 .levelBlock:hover{
-    background: #ffffff8f;
+    box-shadow: 0 0px 30px 0 #8e0033
+}
+
+.disabledLevelBlock {
+    background: #ffffff45;
+    box-shadow: 0 1px 7px 0 #ffffff45;
+}
+.disabledLevelBlock:hover {
+    background: #ffffff45;
+    box-shadow: 0 1px 7px 0 #ffffff45;
 }
 .levelBlock img {
     width: 100% !important;

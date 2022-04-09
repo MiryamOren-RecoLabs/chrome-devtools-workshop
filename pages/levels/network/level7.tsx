@@ -6,12 +6,14 @@ import axios from 'axios'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 import NextLevel from "../../../components/next_level_popup/nextLevel"
 
+const CURRENT_LEVEL = 7;
+
 const CurrentLevel = () : JSX.Element => {
 
     useEffect(() => {
         const getPassword = async () => {
             try {
-                await axios.get("https://621de1f5849220b1fc8833a7.mockapi.io/api/v1/password/097af2ae-9967-11ec-b909-0242ac120002")
+                await axios.get("https://run.mocky.io/v3/c9ba0fdf-2fb3-45e7-8138-22b58f0a3ba9")
             } catch (error) {
                 console.error(error)
             }
@@ -21,19 +23,21 @@ const CurrentLevel = () : JSX.Element => {
 
     return(
         <div className={generalLevelsStyles.levelScreen}>
-            <Navbar currentPage="Level 5" />
+            <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
             <div className={generalLevelsStyles.instructions}>
-                Check the network tab
+                In the network tab, look for an HTTP response
             </div>
-            <img className={generalLevelsStyles.gif} src="https://media1.giphy.com/media/l2JhJmZxibUVOMAPm/giphy.gif"/>
-            <NextLevel currentLevel={5} />
-            <Hint />
+            <img className={generalLevelsStyles.gif} src="https://c.tenor.com/QkQKzbUO4NcAAAAC/mean-girls-gretchen.gif"/>
+            <div className={generalLevelsStyles.buttons}>
+                <NextLevel currentLevel={CURRENT_LEVEL} />
+                <Hint />
+            </div>
         </div>
     );
 }
 
-const Level5 = () => {
-    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={5}/>
+const Level7 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={CURRENT_LEVEL}/>
 }
 
-export default Level5;
+export default Level7;

@@ -22,7 +22,32 @@
 }
 .buttons {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 30px 80px;
+    width: 100%;
+    max-width: 770px;
+    justify-content: space-around;
 }
+
+.buttons button{
+    background: #ffffff47;
+    font-size: 23px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+}
+
+/* .buttons button span {
+    color: #ff006e;
+} */
+
+.buttons button:hover{
+    background-color: #ff006c61;
+}
+
+/* .buttons button:hover span {
+    color: #fff;
+} */

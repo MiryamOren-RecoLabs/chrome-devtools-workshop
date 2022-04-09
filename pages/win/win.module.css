@@ -1,0 +1,50 @@
+.winScreenContainer {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://images.pexels.com/photos/4385995/pexels-photo-4385995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    overflow: hidden;
+}
+.winScreen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+.winScreen h1 {
+    font-size: 70px;
+}
+
+.winScreen p {
+    font-size: 20px;
+}
+
+.winScreen p a {
+    position: relative;
+}
+
+.winScreen p a::after{
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: calc(100% + 10px);
+    left: 0px;
+    bottom: -1px;
+    background: #fc002c8c;
+}
+
+.winScreen p a:hover{ 
+    color: #ffffff;
+    text-shadow: 2px 2px 3px red;
+}
+
+/* The confetti */
+.winScreen div{
+    position: relative;
+    perspective: 800px;
+    height: 15vh;
+    margin-top: 100px;
+}

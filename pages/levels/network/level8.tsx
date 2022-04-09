@@ -6,6 +6,8 @@ import axios from 'axios'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 import NextLevel from "../../../components/next_level_popup/nextLevel"
 
+const CURRENT_LEVEL = 8;
+
 const randomIntFromInterval= (min: number, max: number) : number => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
@@ -21,7 +23,7 @@ const SixRandomImagesAndPassword = (): JSX.Element => (
         <OneRandomImage />
         <OneRandomImage />
         <OneRandomImage />
-        <img alt="password" src="https://i.postimg.cc/76hpZKk1/download-1.jpg"/>
+        <img alt="password" src="https://i.postimg.cc/sfZD7ZPL/photo.png"/>
         <OneRandomImage />
         <OneRandomImage />
         <OneRandomImage />
@@ -54,21 +56,23 @@ const CurrentLevel = (): JSX.Element => {
 
     return(
         <div className={generalLevelsStyles.levelScreen}>
-            <Navbar currentPage="Level 6" />
+            <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
             <div className={generalLevelsStyles.instructions}>
                 The password appears in the picture from the website postimg
             </div>
             <img className={generalLevelsStyles.gif} src="https://i.pinimg.com/originals/87/76/b9/8776b926c6e1ad1cd29eaa8a6d7dc145.gif"/>
-            <NextLevel currentLevel={6} />
-            <Hint />
+            <div className={generalLevelsStyles.buttons}>
+                <NextLevel currentLevel={CURRENT_LEVEL} />
+                <Hint />
+            </div>
             <SixRandomImagesAndPassword />
             {fetchImages && <OneRandomImage />}
         </div>
     );
 }
 
-const Level6 = () => {
-    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={6}/>
+const Level8 = () => {
+    return <LevelWrapper currentLevelComponent={<CurrentLevel />} currentLevel={CURRENT_LEVEL}/>
 }
 
-export default Level6;
+export default Level8;

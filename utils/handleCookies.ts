@@ -20,3 +20,15 @@ export function getCookie(_name: string) {
         return "";
     }
 };
+
+// export function deleteCookie(name: string) {
+//     if (typeof window === 'object') {
+//         const allCookies = document.cookie.split(';');
+//         const res = allCookies.filter((currentCookie: string) => currentCookie.split('=')[0] !== name)
+//         document.cookie = res.join(';')
+//     };
+// };
+
+export function deleteCookie(name: string) {
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }

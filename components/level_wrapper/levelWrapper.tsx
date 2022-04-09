@@ -16,7 +16,7 @@ const LevelWrapper = ({ currentLevelComponent, currentLevel }: LevelWrapperProps
     
     return <div> 
         {(!displayLockScreen && passwordMatch(currentLevel))? 
-            currentLevelComponent : 
+            currentLevelComponent :
             <LockScreen level={currentLevel} setDisplayLockScreen={setDisplayLockScreen}/>}
         </div>
 }
