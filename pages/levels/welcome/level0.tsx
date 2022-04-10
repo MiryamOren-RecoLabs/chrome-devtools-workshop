@@ -21,6 +21,8 @@ export const Level0 = (): JSX.Element => {
             <h1 className={generalLevelsStyles.instructions}>
                 Hello and welcome to the first level of Chrome devtools workshop!
             </h1>
+            <p>{`In this workshop you'll learn how to use chrome devtools.
+            Each level is practicing one of the devtools uses`}</p>
             <p>{`In each level you'll get instructions that will lead you to the password for the next level`}</p>
             <img className={generalLevelsStyles.gif} src="https://media1.giphy.com/media/l0G17mcoGBEabVgn6/200.gif"/>
             <p>{`In this level it's gonna be easy: the password for the next level is: `}<strong>{JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[CURRENT_LEVEL + 1]}</strong></p>

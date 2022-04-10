@@ -12,6 +12,7 @@ const level5Hints: string[] = [
     <br /><span class="tab"></span>🐧 Linux: Ctrl + Shift + j 
     <br /><span class="tab"></span>🪟 Windows: Ctrl + Shift + j 
     <br /><span class="tab"></span>🍎 Mac: Option + ⌘ + J`,
+    `Click on the error log to see its source`,
 ];
 
 const CurrentLevel = () : JSX.Element => {

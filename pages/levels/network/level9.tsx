@@ -8,6 +8,10 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 9;
 
+const level9Hints: string[] = [
+    `Failed requests are marked in red`,
+];
+
 const CurrentLevel = () : JSX.Element => {
 
     useEffect(() => {
@@ -35,7 +39,7 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://media4.giphy.com/media/1zlj55brLYCYmJqujn/giphy.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level9Hints}/>
             </div>
         </div>
     );

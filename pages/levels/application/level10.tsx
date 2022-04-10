@@ -9,7 +9,8 @@ import { setCookie, deleteCookie } from '../../../utils/handleCookies'
 const CURRENT_LEVEL = 10;
 
 const level10Hints: string[] = [
-    `<img src="https://i.postimg.cc/pLN6yMDy/level-10-hint.png" width="100%" >`
+    `<img src="https://i.postimg.cc/pLN6yMDy/level-10-hint.png" width="100%" >`,
+    `Use the filter input to search cookies by their name or value`
 ];
 
 function generateUUID() { // Public Domain/MIT

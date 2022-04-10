@@ -7,6 +7,11 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 12;
 
+const level12Hints: string[] = [
+    `<img src="https://i.postimg.cc/zGPXwMDD/level-12-hint.png" width="100%" >`,
+    `To add a new key:value pair, double-click the empty space in the local storage table`
+];
+
 const CurrentLevel = () : JSX.Element => {
     const [showPassword, setShowPassword] = useState(false)
     useEffect(() => {
@@ -27,7 +32,7 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://media1.tenor.com/images/2dbe238532c3e5d76c88a1a62b0b9d3f/tenor.gif?itemid=25324926"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level12Hints}/>
             </div>
             { (showPassword && localStorage.getItem("showPassword") === "true") && <span className={generalLevelsStyles.password}>The password is: {JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[CURRENT_LEVEL + 1]}</span>}
         </div>

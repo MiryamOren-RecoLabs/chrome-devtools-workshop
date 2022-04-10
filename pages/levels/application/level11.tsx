@@ -8,6 +8,10 @@ import { getCookie, setCookie, deleteCookie } from '../../../utils/handleCookies
 
 const CURRENT_LEVEL = 11;
 
+const level11Hints: string[] = [
+    `To delete a cookie, choose its row in the table and press the delete key`,
+];
+
 const CurrentLevel = () : JSX.Element => {
     const [showPassword, setShowPassword] = useState(false)
     useEffect(() => {
@@ -33,7 +37,7 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://66.media.tumblr.com/1ea51a4d775ec6028dde03a32a007d31/tumblr_p2yzauQ8lq1qgf1i8o1_500.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level11Hints}/>
             </div>
             { (showPassword && !getCookie("Delete Me")) && <span className={generalLevelsStyles.password}>The password is: {JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[CURRENT_LEVEL + 1]}</span> }
         </div>

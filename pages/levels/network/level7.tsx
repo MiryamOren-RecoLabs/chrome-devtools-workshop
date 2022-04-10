@@ -10,11 +10,11 @@ const CURRENT_LEVEL = 7;
 
 const level7Hints: string[] = [
     `Don't see any logs? Refresh the page while the devtools panel is open`,
-    `<img src="https://i.postimg.cc/sx3yCR1B/level7-hint.png" width="100%" >`
+    `<img src="https://i.postimg.cc/sx3yCR1B/level7-hint.png" width="100%" >`,
+    `Click on a network log to see its details`,
 ];
 
 const CurrentLevel = () : JSX.Element => {
-
     useEffect(() => {
         const getPassword = async () => {
             try {
