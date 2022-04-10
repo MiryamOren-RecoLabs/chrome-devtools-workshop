@@ -6,6 +6,7 @@ import levelsConfig from '../../levelsConfig'
 import Image from "next/image";
 import Navbar from '../../components/navbar/navbar'
 import styles from './levels.module.css'
+import mainImageBackgroundStyles from '../../styles/common.module.css'
 import { passwordMatch } from '../../utils/levelsUtils';
 
 const customLoader = ({ src }: { src: string}) => {
@@ -37,7 +38,7 @@ const LevelBlock = ({ levelIndex, tab, icon, description }: LevelBlockProps ): J
 
 const Levels: NextPage = () => {
     return (
-      <div className={styles.levels}>
+      <div className={`${styles.levels} ${mainImageBackgroundStyles.mainImageBackground}`}>
         <Navbar currentPage="Levels"/>
         <div className={styles.levelsContainer}>
           {levelsConfig.map(level => <LevelBlock key={level.levelIndex} {...level} />)}

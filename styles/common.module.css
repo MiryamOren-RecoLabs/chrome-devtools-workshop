@@ -1,0 +1,7 @@
+.mainImageBackground {
+    background-image: url(https://images.pexels.com/photos/4385995/pexels-photo-4385995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: 0% 25%;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    min-height: 100vh;
+}
