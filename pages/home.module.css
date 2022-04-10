@@ -1,2 +1,36 @@
 .home {
+    height: 100vh;
+}
+
+.main{
+    height: calc(100% - 75px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+    padding: 150px;
+}
+
+.main h1 {
+    font-size: 4.5em;
+    font-weight: 400;
+}
+
+.main h2 {
+    font-size: 2.3em;
+    font-weight: 400;
+}
+
+.mainButton{
+    margin: 50px;
+    padding: 12px 30px;
+    background: #ffffff47;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    width: 350px;
 }
