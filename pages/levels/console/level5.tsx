@@ -7,15 +7,14 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 5;
 
-const CurrentLevel = () : JSX.Element => {
-    useEffect(() => {
-        if (document) {
-            let myScript = document.createElement("script");
-            myScript.innerHTML = "let elreValnan = () => console.error('Error 103');elreValnan();";
-            document.body.appendChild(myScript);
-        } 
-    }, []);
+const level5Hints: string[] = [
+    `How to open the console tab? 
+    <br /><span class="tab"></span>🐧 Linux: Ctrl + Shift + j 
+    <br /><span class="tab"></span>🪟 Windows: Ctrl + Shift + j 
+    <br /><span class="tab"></span>🍎 Mac: Option + ⌘ + J`,
+];
 
+const CurrentLevel = () : JSX.Element => {
     return(
         <div className={generalLevelsStyles.levelScreen}>
             <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
@@ -25,8 +24,9 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/OxvVRFnPZO8AAAAC/error-the-simpsons.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level5Hints}/>
             </div>
+            <iframe src="/level5.html" style={{display: "none"}}></iframe>
         </div>
     );
 }
