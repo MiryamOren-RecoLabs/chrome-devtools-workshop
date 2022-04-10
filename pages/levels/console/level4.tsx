@@ -7,6 +7,13 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 4;
 
+const level4Hints: string[] = [
+    `How to open the console tab? 
+    <br /><span class="tab"></span>🐧 Linux: Ctrl + Shift + j 
+    <br /><span class="tab"></span>🪟 Windows: Ctrl + Shift + j 
+    <br /><span class="tab"></span>🍎 Mac: Option + ⌘ + J`,
+];
+
 const CurrentLevel = () => {
     useEffect(() => {
         console.log(`The password is: ${JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[CURRENT_LEVEL + 1]}`)
@@ -20,7 +27,7 @@ const CurrentLevel = () => {
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/xwnwTsNx02wAAAAC/amirlotan-roi-kafri.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level4Hints}/>
             </div>
         </div>
     );

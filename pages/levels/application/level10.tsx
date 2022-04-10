@@ -8,6 +8,10 @@ import { setCookie, deleteCookie } from '../../../utils/handleCookies'
 
 const CURRENT_LEVEL = 10;
 
+const level10Hints: string[] = [
+    `<img src="https://i.postimg.cc/pLN6yMDy/level-10-hint.png" width="100%" >`
+];
+
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
     var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
@@ -52,7 +56,7 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://i.pinimg.com/originals/8e/40/39/8e4039a87321ee8c33097785f484f6b7.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level10Hints}/>
             </div>
         </div>
     );

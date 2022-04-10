@@ -8,6 +8,11 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 7;
 
+const level7Hints: string[] = [
+    `Don't see any logs? Refresh the page while the devtools panel is open`,
+    `<img src="https://i.postimg.cc/sx3yCR1B/level7-hint.png" width="100%" >`
+];
+
 const CurrentLevel = () : JSX.Element => {
 
     useEffect(() => {
@@ -30,7 +35,7 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/QkQKzbUO4NcAAAAC/mean-girls-gretchen.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level7Hints}/>
             </div>
         </div>
     );

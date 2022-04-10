@@ -8,6 +8,10 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 8;
 
+const level8Hints: string[] = [
+    `<img src="https://i.postimg.cc/yx9DNKT7/level8-hint.png" width="100%" >`
+];
+
 const randomIntFromInterval= (min: number, max: number) : number => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
@@ -63,7 +67,7 @@ const CurrentLevel = (): JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://i.pinimg.com/originals/87/76/b9/8776b926c6e1ad1cd29eaa8a6d7dc145.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level8Hints}/>
             </div>
             <SixRandomImagesAndPassword />
             {fetchImages && <OneRandomImage />}

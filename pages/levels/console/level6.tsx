@@ -7,6 +7,12 @@ import NextLevel from "../../../components/next_level_popup/nextLevel"
 
 const CURRENT_LEVEL = 6;
 
+const level6Hints: string[] = [
+    `How to wright JS code in Chrome's console?
+    <br /><iframe width="100%" height="315" src="https://www.youtube.com/embed/iXQu0YwRH4g?start=167" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+    `<a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">How to write JS function?</a>`
+];
+
 const CurrentLevel = () : JSX.Element => {
     useEffect(() => {
         if (document) {
@@ -56,7 +62,7 @@ const CurrentLevel = () : JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://media4.giphy.com/media/3o7qE1Thg4KxFpMGSk/200.gif"/>
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level6Hints}/>
             </div>
         </div>
     );

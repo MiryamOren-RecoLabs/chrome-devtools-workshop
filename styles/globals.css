@@ -41,3 +41,13 @@ a {
   width: 100%;
   max-width: 800px;
 }
+
+.tab {
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+}
+
+.ReactModal__Overlay {
+  display: flex;
+}

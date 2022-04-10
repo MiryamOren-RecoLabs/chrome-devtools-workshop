@@ -4,9 +4,13 @@ import Hint from '../../../components/hint/hint'
 import NextLevel from '../../../components/next_level_popup/nextLevel'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 import { useEffect, useRef, useState } from 'react'
-import { clearInterval } from 'timers'
 
 const CURRENT_LEVEL = 2;
+
+const level2Hints: string[] = [
+    `<a href="https://www.w3schools.com/colors/colors_picker.asp?colorhex=000000" target="_blank">CSS color picker</a>`,
+    `the CSS property that used to set the color of the text is "color"`
+];
 
 // https://stackoverflow.com/questions/59856547/determine-which-color-red-blue-green-or-other-would-be-visible-for-a-given-r
 const isRedish = (rgbValue: string) =>{
@@ -43,7 +47,7 @@ export const CurrentLevel = (): JSX.Element => {
             <img className={generalLevelsStyles.gif} src="https://64.media.tumblr.com/e79ccbb0925c7586bf849916e3c4d0b4/e41abebad83c3f27-1e/s540x810/b36041729a899516e06f489175c391a4cdc001b9.gifv" />
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
-                <Hint />
+                <Hint hints={level2Hints}/>
             </div>
             <p className="password">
                 {showPassword && isRedish(window.getComputedStyle( instructionsRef.current! ,null).getPropertyValue('color')) && <span className={generalLevelsStyles.password}>The password is: {JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[CURRENT_LEVEL + 1]}</span>}

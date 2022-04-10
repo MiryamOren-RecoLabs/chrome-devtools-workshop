@@ -1,6 +1,7 @@
 import Success from '../../images/success-icon.png'
 import Image from 'next/dist/client/image'
 import styles from './nextlevel.module.css'
+import modalStyles from '../modal.module.css'
 import { useEffect, useState } from 'react';
 // @ts-ignore
 import Modal from 'react-modal';
@@ -27,8 +28,8 @@ const NextLevel = ({currentLevel}: NextLevelProps) => {
                 </span>
                 <span>Cracked it!</span>
             </button>
-            <Modal className={styles.nextLevelModal} isOpen={showNextLevelPrompt}>
-                <button onClick={() => setShowNextLevelPrompt(false)} style={{fontFamily: "'Fredoka One', cursive", fontSize: "25px"}}>x</button>
+            <Modal className={`${modalStyles.modal} ${styles.nextLevelModal}`} isOpen={showNextLevelPrompt}>
+                <button onClick={() => setShowNextLevelPrompt(false)} className={modalStyles.modalCloseButton}>x</button>
                 <PasswordForm level={currentLevel + 1} description="Enter the password you've found 🗝️" shouldMoveToNextLevel={true}/>
             </Modal>
         </div>
