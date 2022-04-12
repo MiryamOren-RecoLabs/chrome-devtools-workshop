@@ -3,6 +3,8 @@ import generalLevelsStyles from '../level.module.css'
 import Hint from '../../../components/hint/hint'
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 import NextLevel from '../../../components/next_level_popup/nextLevel'
+import { useEffect, useRef, useState } from 'react'
+
 
 const CURRENT_LEVEL = 3;
 
@@ -13,10 +15,19 @@ const level3Hints: string[] = [
 ];
 
 const CurrentLevel = (): JSX.Element => {
+    const [showPassword, setShowPassword] = useState(false)
+    const instructionsRef = useRef<null | HTMLParagraphElement>(null);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowPassword(instructionsRef.current?.getAttribute('class') === "showPassword");
+        }, 1000)
+
+        return () => clearInterval(interval);
+    }, [instructionsRef])
     return (
         <div className={generalLevelsStyles.levelScreen}>
             <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
-            <div className={generalLevelsStyles.instructions}>
+            <div className={generalLevelsStyles.instructions} ref={instructionsRef}>
                 Change the class of this div to <code>showPassword</code>
             </div>
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/23KqA5qlBnUAAAAC/class-laugh.gif"/>
@@ -24,6 +35,9 @@ const CurrentLevel = (): JSX.Element => {
                 <NextLevel currentLevel={CURRENT_LEVEL} />
                 <Hint hints={level3Hints}/>
             </div>
+            <p className="password">
+                {showPassword && instructionsRef.current?.getAttribute('class') === "showPassword" && <span className={generalLevelsStyles.password}>The password is: {JSON.parse(process.env.NEXT_PUBLIC_LEVELS_PASSWORDS!)[CURRENT_LEVEL + 1]}</span>}
+            </p>
         </div>
     );
 }

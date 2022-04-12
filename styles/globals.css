@@ -26,20 +26,7 @@ a {
   font-size: 40px;
   max-width: 800px;
   padding: 50px;
-  margin-bottom: 120px;
   display: block;
-}
-
-.showPassword::after {
-  /* Level 3's password */
-  content: 'The password is: bemereAdlana';
-  position: absolute;
-  display: block;
-  bottom: -100px;
-  left: 0;
-  padding: 50px;
-  width: 100%;
-  max-width: 800px;
 }
 
 .tab {
@@ -53,10 +40,10 @@ a {
 }
 
 code {
-  font-family: 'Courier New';
-  color: rgb(68 68 68);
-  background: #ffffff91;
-  padding: 3px 0.5ch 1px 0.5ch;
-  margin: 0 5px;
-  border-radius: 5px;
+      font-family: 'Courier New';
+    color: rgb(68 68 68);
+    background: #ffffff91;
+    padding: 3px 0.5ch 1px 0.5ch;
+    margin: 0 5px;
+    border-radius: 5px;
 }
