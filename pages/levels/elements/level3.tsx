@@ -7,7 +7,7 @@ import NextLevel from '../../../components/next_level_popup/nextLevel'
 const CURRENT_LEVEL = 3;
 
 const level3Hints: string[] = [
-    `<a href="https://blog.hubspot.com/website/what-is-css-class" target="_blank">What is class?</a>`,
+    `<a href="https://blog.hubspot.com/website/what-is-css-class" target="_blank">What is CSS class?</a>`,
     `How to edit HTML elements attributes using Chrome devtools:
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/DbHxHvMFZ8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 ];
@@ -17,7 +17,7 @@ const CurrentLevel = (): JSX.Element => {
         <div className={generalLevelsStyles.levelScreen}>
             <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
             <div className={generalLevelsStyles.instructions}>
-                {`Change the class of this div to "showPassword"`}
+                Change the class of this div to <code>showPassword</code>
             </div>
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/23KqA5qlBnUAAAAC/class-laugh.gif"/>
             <div className={generalLevelsStyles.buttons}>

@@ -9,7 +9,7 @@ const CURRENT_LEVEL = 2;
 
 const level2Hints: string[] = [
     `<a href="https://www.w3schools.com/colors/colors_picker.asp?colorhex=000000" target="_blank">CSS color picker</a>`,
-    `the CSS property that used to set the color of the text is "color"`
+    ` the CSS property that is used to set the color of the text is <code>color</code>`
 ];
 
 // https://stackoverflow.com/questions/59856547/determine-which-color-red-blue-green-or-other-would-be-visible-for-a-given-r

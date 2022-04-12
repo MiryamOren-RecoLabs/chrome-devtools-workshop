@@ -20,7 +20,7 @@ const CurrentLevel = () : JSX.Element => {
         <div className={generalLevelsStyles.levelScreen}>
             <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
             <div className={generalLevelsStyles.instructions}>
-                <p>{`What's the name of function that logging the error?`}</p>
+                <p>{`What's the name of the function that logs the error?`}</p>
             </div>
             <img className={generalLevelsStyles.gif} src="https://c.tenor.com/OxvVRFnPZO8AAAAC/error-the-simpsons.gif"/>
             <div className={generalLevelsStyles.buttons}>

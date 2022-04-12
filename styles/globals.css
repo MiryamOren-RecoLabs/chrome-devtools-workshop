@@ -51,3 +51,12 @@ a {
 .ReactModal__Overlay {
   display: flex;
 }
+
+code {
+  font-family: 'Courier New';
+  color: rgb(68 68 68);
+  background: #ffffff91;
+  padding: 3px 0.5ch 1px 0.5ch;
+  margin: 0 5px;
+  border-radius: 5px;
+}

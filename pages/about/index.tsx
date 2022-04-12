@@ -40,7 +40,7 @@ const About = () : JSX.Element => {
           height={photoDimensions.height}/> 
         <div>
             <h1>{`Hi👋 I'm Miryam Oren`}</h1>
-            <h2> Front end developer, sci-fi and fashion geek 🤖💃</h2>
+            <h2> Front-end developer, sci-fi geek, sing in a choir 🤖🎶</h2>
             <h2>Feel free to contact me!</h2>
             <h2><a href="mailto:miryamoren360@gmail.com">✉️ miryamoren360@gmail.com</a></h2>
         </div>
