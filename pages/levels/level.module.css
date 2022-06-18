@@ -1,5 +1,6 @@
 .levelScreen {
-    height: 100vh;
+    min-height: 100vh;
+    min-width: 550px;
     background-image: linear-gradient(to bottom right,#d43078,#ffef03);
     display: flex;
     flex-direction: column;
@@ -9,7 +10,7 @@
     overflow: hidden;
 }
 .instructions, .password {
-    font-size: 40px;
+    font-size: 2.1rem;
     max-width: 800px;
     padding: 50px;
     display: block;

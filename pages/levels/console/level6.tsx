@@ -1,9 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react"
 import Navbar from '../../../components/navbar/navbar'
 import generalLevelsStyles from '../level.module.css'
 import Hint from "../../../components/hint/hint"
 import LevelWrapper from '../../../components/level_wrapper/levelWrapper'
 import NextLevel from "../../../components/next_level_popup/nextLevel"
+import Gif from '../../../images/levels-gifs/level-6.gif'
+import Image from "next/image";
 
 const CURRENT_LEVEL = 6;
 
@@ -56,10 +59,14 @@ const CurrentLevel = () : JSX.Element => {
             
             <Navbar currentPage={`Level ${CURRENT_LEVEL}`} />
             <div className={generalLevelsStyles.instructions}>
-                <p>Write a JS power function in the console, then call the function <code>checkMyCode</code> with your function as its only parameter</p>
+                <p>Write a JS power function in the console. <br /> Now call the function <code>checkMyCode</code> with your function as its only parameter</p>
                 <p style={{fontSize: "20px"}}>* Power function is a function that gets two parameters, a and b, and returns the value of a to the power of b (a^b)</p>
             </div>
-            <img className={generalLevelsStyles.gif} src="https://media4.giphy.com/media/3o7qE1Thg4KxFpMGSk/200.gif"/>
+            <Image 
+                src={Gif} className={generalLevelsStyles.gif}
+                unoptimized 
+                alt="To Math: GIF by Saturday Night Live"
+            />
             <div className={generalLevelsStyles.buttons}>
                 <NextLevel currentLevel={CURRENT_LEVEL} />
                 <Hint hints={level6Hints}/>
