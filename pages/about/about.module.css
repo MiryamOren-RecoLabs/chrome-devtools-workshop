@@ -28,3 +28,25 @@
     font-weight: 100;
     font-size: 1.7em;
 }
+
+.contactMe {
+    padding: 0 !important;
+}
+
+.contactMeButtons {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.contactMeButtons img{
+    height: 55px !important;
+}
+
+.linkedinIconWrapper, .gmailIconWrapper {
+    height: 55px;
+    cursor: pointer;
+    background: transparent;
+}
+

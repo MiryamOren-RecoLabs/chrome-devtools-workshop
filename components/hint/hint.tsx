@@ -25,7 +25,7 @@ const Hint = ({ hints=[] }: HintProps): JSX.Element => {
     return (
         <div className={styles.hint}>
             <button className={styles.hintButton} onClick={() => setShowHint(true)}>
-                <Image src={BulbIcon} height={25} width={25} loader={customLoader} unoptimized/>
+                <Image src={BulbIcon} height={25} width={25} loader={customLoader} unoptimized alt="bulb-icon"/>
                 <span>Hint?</span>
             </button>
             <Modal className={`${modalStyles.modal} ${styles.hintModal}`} isOpen={showHint}>
