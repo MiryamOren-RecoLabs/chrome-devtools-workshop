@@ -16,6 +16,7 @@
 
 .winScreen h1 {
     font-size: 70px;
+    text-align: center;
 }
 
 .winScreen p {
@@ -47,4 +48,26 @@
     perspective: 800px;
     height: 15vh;
     margin-top: 100px;
+}
+
+.ShareButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 470px;
+    flex-wrap: wrap;
+    margin: 0 auto !important;
+}
+
+.ShareButtons a span {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.ShareButtons span {
+    overflow: visible !important;
+}
+
+.ShareButtons img {
+    margin: 5px !important;
 }
